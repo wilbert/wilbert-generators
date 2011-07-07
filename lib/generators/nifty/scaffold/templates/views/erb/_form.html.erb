@@ -1,10 +1,18 @@
 <%%= form_for <%= item_path :instance_variable => true %> do |f| %>
-  <%%= f.error_messages %>
-<%- for attribute in model_attributes -%>
-  <div class="field">
-    <%%= f.label :<%= attribute.name %> %>
-    <%%= f.<%= attribute.field_type %> :<%= attribute.name %> %>
+  <div class="demo fields">  
+    <p>  <%%= f.error_messages %></p>
+    <h3 class="acc_trigger">Detalhamento</h3>
+    <div class="acc_container">
+			<%- for attribute in model_attributes -%>
+				<div class="field">
+					<%= "<div class='label'>" %> <%%= f.label :<%= attribute.name %> %><%= '</div>' %>
+					<%= "<div class='input'>"%> <%%= f.<%= attribute.field_type %> :<%= attribute.name %> %><%= "</div>" %>
+			  </div>
+			<%- end -%>
+		</div>
+  	<div class="actions"><%%= f.submit %></div>
   </div>
-<%- end -%>
-  <div class="actions"><%%= f.submit %></div>
+  
+  
+  <p>Using nifty:Khronus templates</p>
 <%% end %>
