@@ -5,7 +5,7 @@
 <%% content_for :links do -%>
   <%- if actions? :show, :index -%>
   <%- if action? :show -%>
-    <%%= link_to "Detalhes", <%= item_path :instance_variable => true %> %> |
+    <%%= link_to "Detalhes", <%= item_path :instance_variable => true %> %>
   <%- end -%>
   <%- if action? :index -%>
     <%%= link_to "Ver todos", <%= items_path %> %>

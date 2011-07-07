@@ -1,7 +1,6 @@
 <%%= form_for <%= item_path :instance_variable => true %> do |f| %>
   <div class="demo fields">  
-    <p>  <%%= f.error_messages %></p>
-    <h3 class="acc_trigger">Detalhamento</h3>
+    <p><%%= f.error_messages %></p>
     <div class="acc_container">
 			<%- for attribute in model_attributes -%>
 				<div class="field">

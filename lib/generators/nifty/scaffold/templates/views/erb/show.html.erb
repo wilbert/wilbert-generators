@@ -9,10 +9,10 @@
 
 <%% content_for :links do -%>
   <%- if action? :edit -%>
-    <%%= link_to "Editar", <%= item_path :action => :edit, :instance_variable => true %> %> |
+    <%%= link_to "Editar", <%= item_path :action => :edit, :instance_variable => true %> %>
   <%- end -%>
   <%- if action? :destroy -%>
-    <%%= link_to "Apagar", <%= item_path :instance_variable => true %>, :confirm => 'Are you sure?', :method => :delete %> |
+    <%%= link_to "Apagar", <%= item_path :instance_variable => true %>, :confirm => 'Você tem certeza?', :method => :delete %>
   <%- end -%>
   <%- if action? :index -%>
     <%%= link_to "Ver todos", <%= items_path %> %>
