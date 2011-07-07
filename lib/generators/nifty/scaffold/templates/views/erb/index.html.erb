@@ -2,17 +2,17 @@
 
 <%% content_for :links do -%>
   <%- if action? :new -%>
-    <p><%%= link_to "Novo <%= singular_name.titleize %>", <%= item_path :action => :new %> %></p>
+    <%%= link_to "Novo <%= singular_name.titleize %>", <%= item_path :action => :new %> %>
   <%- end -%>
 <%% end -%>
-
+   
 <table>
   <tr>
   <%- for attribute in model_attributes -%>
-    <th><%% tlink <%= attribute.human_name.titleize %>, <%= attribute %> %> </th>
+    <th><%% tlink "<%= attribute.human_name.titleize %>", "<%= attribute.name %> " %></th>
   <%- end -%>
   </tr>
-  <%% for <%= instance_name %> in @<%= instances_name %> %>
+  <%% @<%= instances_name %>.each do |<%= instance_name %>|  %>
     <tr>
     <%- for attribute in model_attributes -%>
       <td><%%= <%= instance_name %>.<%= attribute.name %> %></td>

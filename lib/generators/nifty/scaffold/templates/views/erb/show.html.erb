@@ -7,14 +7,15 @@
 </p>
 <%- end -%>
 
-<p>
-<%- if action? :edit -%>
-  <%%= link_to "Edit", <%= item_path :action => :edit, :instance_variable => true %> %> |
-<%- end -%>
-<%- if action? :destroy -%>
-  <%%= link_to "Destroy", <%= item_path :instance_variable => true %>, :confirm => 'Are you sure?', :method => :delete %> |
-<%- end -%>
-<%- if action? :index -%>
-  <%%= link_to "View All", <%= items_path %> %>
-<%- end -%>
-</p>
+<% content_for :links do -%>
+  <%- if action? :edit -%>
+    <%%= link_to "Editar", <%= item_path :action => :edit, :instance_variable => true %> %> |
+  <%- end -%>
+  <%- if action? :destroy -%>
+    <%%= link_to "Apagar", <%= item_path :instance_variable => true %>, :confirm => 'Are you sure?', :method => :delete %> |
+  <%- end -%>
+  <%- if action? :index -%>
+    <%%= link_to "Ver todos", <%= items_path %> %>
+  <%- end -%>
+<% end -%>
+
