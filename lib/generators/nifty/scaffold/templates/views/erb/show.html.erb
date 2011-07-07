@@ -7,7 +7,7 @@
 </p>
 <%- end -%>
 
-<% content_for :links do -%>
+<%% content_for :links do -%>
   <%- if action? :edit -%>
     <%%= link_to "Editar", <%= item_path :action => :edit, :instance_variable => true %> %> |
   <%- end -%>
