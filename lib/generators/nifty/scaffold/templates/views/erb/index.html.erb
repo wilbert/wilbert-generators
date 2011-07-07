@@ -1,9 +1,15 @@
 <%% title "<%= plural_name.titleize %>" %>
 
+<%% content_for :links do -%>
+  <%- if action? :new -%>
+    <p><%%= link_to "Novo <%= singular_name.titleize %>", <%= item_path :action => :new %> %></p>
+  <%- end -%>
+<%% end -%>
+
 <table>
   <tr>
   <%- for attribute in model_attributes -%>
-    <th><%= attribute.human_name.titleize %></th>
+    <th><%% tlink <%= attribute.human_name.titleize %>, <%= attribute %> %> </th>
   <%- end -%>
   </tr>
   <%% for <%= instance_name %> in @<%= instances_name %> %>
@@ -12,18 +18,17 @@
       <td><%%= <%= instance_name %>.<%= attribute.name %> %></td>
     <%- end -%>
     <%- if action? :show -%>
-      <td><%%= link_to "Show", <%= item_path %> %></td>
+      <td><%%= link_to "Detalhes", <%= item_path %> %></td>
     <%- end -%>
     <%- if action? :edit -%>
-      <td><%%= link_to "Edit", <%= item_path :action => :edit %> %></td>
+      <td><%%= link_to "Editar", <%= item_path :action => :edit %> %></td>
     <%- end -%>
     <%- if action? :destroy -%>
-      <td><%%= link_to "Destroy", <%= item_path %>, :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><%%= link_to "Apagar", <%= item_path %>, :confirm => 'Você tem certeza?', :method => :delete %></td>
     <%- end -%>
     </tr>
   <%% end %>
 </table>
 
-<%- if action? :new -%>
-<p><%%= link_to "New <%= singular_name.titleize %>", <%= item_path :action => :new %> %></p>
-<%- end -%>
+
+
