@@ -5,14 +5,11 @@
     <div class="acc_container">
 			<%- for attribute in model_attributes -%>
 				<div class="field">
-					<%= "<div class='label'>" %> <%%= f.label :<%= attribute.name %> %><%= '</div>' %>
-					<%= "<div class='input'>"%> <%%= f.<%= attribute.field_type %> :<%= attribute.name %> %><%= "</div>" %>
+					<div class='label'> <%%= f.label :<%= attribute.name %> %> </div>
+					<div class='input'> <%%= f.<%= attribute.field_type %> :<%= attribute.name %> %></div>
 			  </div>
 			<%- end -%>
 		</div>
   	<div class="actions"><%%= f.submit %></div>
   </div>
-  
-  
-  <p>Using nifty:Khronus templates</p>
 <%% end %>

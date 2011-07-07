@@ -9,7 +9,7 @@
 <table>
   <tr>
   <%- for attribute in model_attributes -%>
-    <th><%% tlink "<%= attribute.human_name.titleize %>", "<%= attribute.name %> " %></th>
+    <th><%% tlink "<%= attribute.human_name.titleize %>", "<%= attribute.name %>" %></th>
   <%- end -%>
   </tr>
   <%% @<%= instances_name %>.each do |<%= instance_name %>|  %>
